@@ -21,6 +21,139 @@
    width: 100%;
    text-align: center;
 }
+	:root {
+	font-family: system-ui;
+	background: #343f47;
+	text-align: center;
+	color: #8b8b8b;
+	--segment-length: 2.4rem;
+	--segment-height: .75rem;
+}
+
+body {
+	margin: 0;
+}
+
+*,
+:after,
+:before {
+	box-sizing: border-box;
+}
+
+.dispaly {
+	background: black;
+	display: inline grid;
+	box-shadow:
+		1px 1px #5a5a5a,
+		2px 2px #5a5a5a; 
+	margin: 2px;
+	
+	&__segements {
+		display: grid;
+		padding: 1.1rem;
+		transform: skewX(-10deg) translateX(-.8rem);
+		transform-origin: bottom left;
+		grid-template-areas:
+			". a ."
+			"f . b"
+			" . g ."
+			"e . c"
+			". d .";
+	}
+
+	&[data-digit="0"]{
+		--g: 0.2;
+	}
+	&[data-digit="1"]{
+		--a: 0.2;
+		--d: 0.2;
+		--e: 0.2;
+		--f: 0.2;
+		--g: 0.2;
+	}
+	&[data-digit="2"]{
+		--c: 0.2;
+		--f: 0.2;
+	}
+	&[data-digit="3"]{
+		--e: 0.2;
+		--f: 0.2;
+	}
+	&[data-digit="4"]{
+		--a: 0.2;
+		--d: 0.2;
+		--e: 0.2;
+	}
+	&[data-digit="5"]{
+		--b: 0.2;
+		--e: 0.2;
+	}
+	&[data-digit="6"]{
+		--b: 0.2;
+	}
+	&[data-digit="7"]{
+		--d: 0.2;
+		--e: 0.2;
+		--f: 0.2;
+		--g: 0.2;
+	}
+	&[data-digit="8"]{
+		// all on
+	}
+	&[data-digit="9"]{
+		// --d: 0.2;
+		--e: 0.2;
+	}
+
+	&__segment {
+		// filter: blur(.05rem);
+		background: red; 
+		width: var(--segment-height);
+		height: var(--segment-length);
+		margin: -0.05rem;
+		opacity: var(--opacity);
+		transition: opacity .5s;
+		border-radius: 1rem;
+		corner-shape: bevel;
+
+		&--a,
+		&--g,
+		&--d {
+			width: var(--segment-length);
+			height: var(--segment-height);
+		}
+
+		&--a {
+			--opacity: var(--a);
+			grid-area: a;
+		}
+		&--b {
+			--opacity: var(--b);
+			grid-area: b;
+		}
+		&--c {
+			--opacity: var(--c);
+			grid-area: c;
+		}
+		&--d {
+			--opacity: var(--d);
+			grid-area: d;
+		}
+		&--e {
+			--opacity: var(--e);
+			grid-area: e;
+		}
+		&--f {
+			--opacity: var(--f);
+			grid-area: f;
+		} 
+		&--g {
+			--opacity: var(--g);
+			grid-area: g;
+		}
+
+	}
+}
 </style>
     <head>
         <body style="height:1500px">
@@ -62,6 +195,8 @@
  <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav" style="background-color: lightblue;>
+		<h1>Countdown to 2027</h1>
+<app/>
 	</div>
   <div class="col-sm-8 text-left"> 
   <br>
