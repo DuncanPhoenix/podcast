@@ -91,7 +91,7 @@
   border-radius: var(--radius);
   background: var(--card-bg);
   box-shadow: var(--shadow);
-  padding: 5px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -121,14 +121,25 @@
   }
   50% {
     box-shadow: 0 0 22px rgba(0, 255, 255, 0.4),
-      0 0 45px rgba(0, 255, 255, 0.25) inset;
+      0 0 35px rgba(0, 255, 255, 0.25) inset;
   }
   100% {
     box-shadow: 0 0 12px rgba(0, 255, 255, 0.25),
       0 0 25px rgba(0, 255, 255, 0.15) inset;
   }
 }
-
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-back h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
 ul.features {
   list-style: none;
   padding: 0;
@@ -185,12 +196,14 @@ ul.features li::before {
     min-height: 300px;
   }
   .card-face {
-    padding: 15px;
+    padding: 18px;
   }
   .card-front h2 {
     font-size: 1.3rem;
   }
- 
+  .card-back h3 {
+    font-size: 1.2rem;
+  }
   ul.features li {
     font-size: 0.9rem;
   }
@@ -203,7 +216,7 @@ ul.features li::before {
 }
 .card-front p {
   font-size: 1rem;
-  color: white;
+  color: var(--text-dim);
   line-height: 1.5;
 }
 .one {
@@ -358,7 +371,13 @@ ul.features li::before {
         </div>
         <h3>This broad category focuses on the entire journey of a runner, from taking their first steps to developing a sustained passion and improving consistently over time.</h3>
       </div>
+      <div class="card-face card-back">
+        <div>
          
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
         </div>
       </div>
     </div>
@@ -380,11 +399,13 @@ ul.features li::before {
         <h3>This part is focused about mathematical approach in everything that is conected to running. From PB, to transitions between miles and kilometers, avarage weekly running times or distances, measuring calories, and putting brain into the science of basics of this sport. </h3>
 		  <br>
       </div>
-    
+      <div class="card-face card-back">
+        <div>
         
         </div>
         <div class="cta-buttons">
- 
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
         </div>
       </div>
     </div>
@@ -399,8 +420,14 @@ ul.features li::before {
         </div>
         <p> This segment explores the specific training methodologies, techniques, and race strategies tailored to different running distances (sprints, middle distance, and long distance events).</p>
       </div>
+      <div class="card-face card-back">
+        <div>
+      
         </div>
-       
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -414,8 +441,14 @@ ul.features li::before {
         </div>
         <p>Dedicated to the extreme end of the sport, this theme covers the unique physical and mental challenges, specialized training plans, and essential gear required for ultra-marathons and beyond.</p>
       </div>
+      <div class="card-face card-back">
+        <div>
+          
         </div>
-       
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -429,8 +462,13 @@ ul.features li::before {
         </div>
         <p>This focuses on the critical aspects of runner well-being, including prevention and management of common running injuries, understanding muscle fatigue, and the mental stress associated with training.</p>
       </div>
-
+      <div class="card-face card-back">
+        <div>
           
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
         </div>
       </div>
     </div>
@@ -445,8 +483,14 @@ ul.features li::before {
         </div>
         <p>This theme delves into the science and practice of high-intensity interval workouts (HIIT), discussing various methods, benefits, and how to effectively incorporate them into a training schedule.</p>
       </div>
+      <div class="card-face card-back">
+        <div>
+          
         </div>
-     
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -460,7 +504,13 @@ ul.features li::before {
         </div>
         <p>This section compares and contrasts running on different surfaces and environments, discussing the unique aspects of road races versus track events, including performance impacts and necessary adjustments.</p>
       </div>
+      <div class="card-face card-back">
+        <div>
           
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
         </div>
       </div>
     </div>
@@ -479,6 +529,10 @@ ul.features li::before {
         <div>
           
         </div>
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -492,8 +546,14 @@ ul.features li::before {
         </div>
         <p>This covers the vital topic of fueling the body for running performance and recovery, detailing dietary needs, the use of energy gels, and the role of supplements.</p>
       </div>
+      <div class="card-face card-back">
+        <div>
+    
         </div>
-
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -507,7 +567,13 @@ ul.features li::before {
         </div>
         <p>This theme provides a deep dive into the world of running gear, discussing shoe technology, choosing the right pair for individual foot types and running styles, and the latest trends in footwear.</p>
       </div>
+      <div class="card-face card-back">
+        <div>
           
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
         </div>
       </div>
     </div>
@@ -522,7 +588,13 @@ ul.features li::before {
         </div>
         <p>This segment emphasizes the importance of flexibility and recovery, detailing effective stretching routines (both dynamic and static) and their role in injury prevention and overall fitness.</p>
       </div>
+      <div class="card-face card-back">
+        <div>
     
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
         </div>
       </div>
     </div>
@@ -536,7 +608,14 @@ ul.features li::before {
          
         </div>
         <p>A general overview of achieving and maintaining a strong physical condition, this theme covers cross-training, strength work, and other foundational elements that support and enhance running ability.</p>
-      </div>  
+      </div>
+      <div class="card-face card-back">
+        <div>
+         
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="primary">Get Started</a>
+          <a href="#" class="secondary">Learn More</a>
         </div>
       </div>
     </div>
