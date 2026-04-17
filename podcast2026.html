@@ -53,7 +53,10 @@
 <style>
 	body {
   background-image: url('images/podcast2.jpg');
-		  background-size: 100% 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
 }
 .footer {
    position: fixed;
@@ -61,20 +64,22 @@
    bottom: 0;
    width: 100%;
    text-align: center;
+   z-index: 1000;
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 .card {
   perspective: 1000px;
   cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
-  margin-bottom: 20px;
 }
 .card-inner {
   position: relative;
@@ -193,16 +198,74 @@ ul.features li::before {
 @media (max-width: 768px) {
   body {
     padding: 10px;
+    background-attachment: scroll;
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
   }
   .card-inner {
-    min-height: 400px;
+    min-height: 250px;
   }
   .card-face {
-    padding: 12px;
+    padding: 15px;
   }
-
-  ul.features li {
+  .card-front h2 {
+    font-size: 1.3rem;
+  }
+  .card-front p {
+    font-size: 1rem;
+  }
+  .navbar-brand span {
+    display: block;
     font-size: 0.9rem;
+  }
+  .footer {
+    position: relative;
+    margin-top: 50px;
+  }
+  .col-sm-2 {
+    display: none;
+  }
+  .col-sm-8 {
+    width: 100%;
+    padding: 0;
+  }
+  .card-front h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+  .card-front p, .card-front h3 {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  .navbar-form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .navbar-form .form-control {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    padding: 5px;
+    gap: 10px;
+  }
+  .card-inner {
+    min-height: 200px;
+  }
+  .card-face {
+    padding: 10px;
+  }
+  .navbar-brand img {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  h1 {
+    font-size: 1.5rem;
   }
 }
 .card-front h2 {
@@ -295,15 +358,21 @@ ul.features li::before {
 }
 </style>
     <head>
-        <body style="height:1500px;">
+        <body>
 
             <nav class="navbar navbar-inverse navbar-primary navbar-fixed-top">
 				
                     <div class="navbar-header">
-                        <a class="navbar-brand"><img src="images/podcast1.png" alt="Lights" class="w3-image" style="float:left; margin:"10px; padding:"10px" width="30" height="30" href="#"><a class="navbar-brand" href="#"><span style="color: blue">Oxford </span><span style="color: red">Running </span><span style="color: white">Podcast</span></a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand"><img src="images/podcast1.png" alt="Lights" class="w3-image" style="float:left; margin:10px; padding:10px" width="30" height="30" href="#"><a class="navbar-brand" href="#"><span style="color: blue">Oxford </span><span style="color: red">Running </span><span style="color: white">Podcast</span></a>
                     </div>
                
-                    <ul class="nav navbar-nav" style=" padding-left:250px;"> 
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav"> 
                         <li class="home"><a href="index.html"><strong>About Us</strong></a></li>
                         <li><a href="races.html"><strong>Races</strong></a></li>
                         <li><a href="sessions&socials.html"><strong>Sessions&Socials</strong></a></li>
@@ -321,12 +390,15 @@ ul.features li::before {
                             </div>
                         </div>
                      </form>
+                     </div>
                 </div>
             </nav>
 </head>
  <p></p>
 	    
-    <div class="col-sm-2 sidenav" style="background-color: lightblue; height: max;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2 sidenav hidden-xs" style="background-color: lightblue;">
 		 <ul class="nav nav-pills flex-column flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" style=" padding-left:50px; padding-top:100px"> 
                         <a href="newest.html"><strong><h2>Newest</h2></strong></a>
 			            <br>
@@ -348,12 +420,13 @@ ul.features li::before {
     	<br>
 		<br>
 	</div>
-  <div class="col-sm-8 text-left"> 
+        <div class="col-sm-8 col-xs-12 text-left"> 
   <br>
   <p></p>
    <h1 style="text-align:center; color: orange; text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 25px rgb(96, 12, 98), 0 0 5px rgb(208, 220, 74);"><strong>Oxrunners Season 2026</strong></h1>
 	   <br>
-	  	  <!-- Card 1 -->
+	  	  <div class="card-grid">
+	  <!-- Card 1 -->
   <div class="card">
     <div class="card-inner">
       <div class="card-face card-front one">
@@ -580,7 +653,7 @@ ul.features li::before {
     </div>
   </div>
   </div>
-  <div class="w3-container w3-margin">
+  </div>
   <br>
   <br>
   <p style="text-align:center;">blabla </p>
