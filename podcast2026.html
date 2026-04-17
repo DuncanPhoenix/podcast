@@ -105,6 +105,24 @@
   backface-visibility: hidden;
   transform-style: preserve-3d;
   transition: box-shadow 0.3s, filter 0.3s;
+  background-blend-mode: overlay;
+}
+.card-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius);
+  z-index: 1;
+}
+.card-face > div:first-child {
+  margin-bottom: 1rem;
+}
+.card-face > div:last-child {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .card-face::before {
   content: "";
@@ -213,9 +231,15 @@ ul.features li::before {
   }
   .card-front h2 {
     font-size: 1.3rem;
+    color: #FFD700;
+    text-shadow: 3px 3px 6px #000000, 0 0 10px rgba(0,0,0,0.8);
+    line-height: 1.2;
   }
   .card-front p {
     font-size: 1rem;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #000000, 0 0 8px rgba(0,0,0,0.7);
+    line-height: 1.4;
   }
   .navbar-brand span {
     display: block;
@@ -235,10 +259,15 @@ ul.features li::before {
   .card-front h2 {
     font-size: 1.2rem;
     margin-bottom: 0.3rem;
+    color: #FFD700;
+    text-shadow: 3px 3px 6px #000000, 0 0 10px rgba(0,0,0,0.8);
+    line-height: 1.2;
   }
   .card-front p, .card-front h3 {
     font-size: 0.9rem;
     line-height: 1.3;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #000000, 0 0 8px rgba(0,0,0,0.7);
   }
   .navbar-form {
     margin-top: 10px;
@@ -267,19 +296,32 @@ ul.features li::before {
   h1 {
     font-size: 1.5rem;
   }
+  .card-front h2 {
+    font-size: 1.1rem;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px #000000, 0 0 8px rgba(0,0,0,0.8);
+  }
+  .card-front p, .card-front h3 {
+    font-size: 0.85rem;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #000000, 0 0 6px rgba(0,0,0,0.7);
+  }
 }
 .card-front h2 {
   font-family: "Orbitron", sans-serif;
   font-size: 1.6rem;
-  color: white;
+  color: #FFD700;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 3px 3px 6px #000000, 0 0 10px rgba(0,0,0,0.8);
+  font-weight: bold;
+  line-height: 1.2;
 }
-.card-front p {
+.card-front p, .card-front h3 {
   font-size: 1.2rem;
-  color: white;
-  line-height: 1;
-  text-shadow: 2px 2px 4px #000000;
+  color: #FFFFFF;
+  line-height: 1.4;
+  text-shadow: 2px 2px 4px #000000, 0 0 8px rgba(0,0,0,0.7);
+  margin-bottom: 0.5rem;
 }
 .one {
   background: url("images/vago.png");
@@ -433,7 +475,9 @@ ul.features li::before {
         <div>
           <h2>From begginer to enthusiast</h2>
         </div>
-        <h3>This broad category focuses on the entire journey of a runner, from taking their first steps to developing a sustained passion and improving consistently over time.</h3>
+        <div>
+          <h3>This broad category focuses on the entire journey of a runner, from taking their first steps to developing a sustained passion and improving consistently over time.</h3>
+        </div>
       </div>
       <div class="card-face card-back">
         <div>
@@ -449,7 +493,9 @@ ul.features li::before {
         <div>
 			<h2>Running Math</h2><video controls="" name="media" style="width:220px; height:50px;"><source src="Merkaba.mp3" type="audio/mpeg"></video><p>32:27   31.01.2026</p>
         </div>
-        <h3>This part is focused about mathematical approach in everything that is conected to running. From PB, to transitions between miles and kilometers, avarage weekly running times or distances, measuring calories, and putting brain into the science of basics of this sport. </h3>
+        <div>
+          <h3>This part is focused about mathematical approach in everything that is conected to running. From PB, to transitions between miles and kilometers, avarage weekly running times or distances, measuring calories, and putting brain into the science of basics of this sport. </h3>
+        </div>
 		  <br>
       </div>
       <div class="card-face card-back">
@@ -466,7 +512,9 @@ ul.features li::before {
         <div>
           <h2>Sprint/Mid/Long</h2>
         </div>
-        <h3> This segment explores the specific training methodologies, techniques, and race strategies tailored to different running distances (sprints, middle distance, and long distance events).</h3>
+        <div>
+          <h3> This segment explores the specific training methodologies, techniques, and race strategies tailored to different running distances (sprints, middle distance, and long distance events).</h3>
+        </div>
       </div>
       <div class="card-face card-back">
         <div>
