@@ -8,12 +8,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script>
-  const isTouch = "ontouchstart" in window;
-  document.querySelectorAll(".card").forEach((card) => {
-  const inner = card.querySelector(".card-inner");
+  document.addEventListener('DOMContentLoaded', () => {
+    const isTouch = "ontouchstart" in window;
+    document.querySelectorAll(".card").forEach((card) => {
+      const inner = card.querySelector(".card-inner");
 
-  // Tap/click flip met subtiele scale-bounce
-  card.addEventListener("click", () => {
+      // Tap/click flip met subtiele scale-bounce
+      card.addEventListener("click", () => {
     const baseRotate = card.classList.contains("flipped") ? 0 : 180;
     inner.style.transition = "transform 0.15s ease-out";
     inner.style.transform = `rotateY(${baseRotate}deg) scale(1.05)`;
@@ -42,7 +43,37 @@
     });
   }
 });
+  });
     </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.card').forEach((card) => {
+        const front = card.querySelector('.card-face.card-front');
+        const back = card.querySelector('.card-face.card-back');
+        if (!front || !back) return;
+
+        const title = front.querySelector('h2');
+        const video = front.querySelector('video');
+        const time = video && video.nextElementSibling && video.nextElementSibling.tagName.toLowerCase() === 'p'
+          ? video.nextElementSibling
+          : null;
+
+        if (video) {
+          const backContent = document.createElement('div');
+          if (title) {
+            const clonedTitle = title.cloneNode(true);
+            backContent.appendChild(clonedTitle);
+          }
+          backContent.appendChild(video);
+          if (time) {
+            backContent.appendChild(time);
+          }
+          back.innerHTML = '';
+          back.appendChild(backContent);
+        }
+      });
+    });
+  </script>
   <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,7 +115,7 @@
 .card-inner {
   position: relative;
   width: 100%;
-  min-height: 280px;
+  min-height: 320px;
   transform-style: preserve-3d;
   border-radius: var(--radius);
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -98,7 +129,7 @@
   border-radius: var(--radius);
   background: var(--card-bg);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-  padding: 20px;
+  padding: 12px 20px 18px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -121,15 +152,15 @@
   z-index: 1;
 }
 .card-face > div:first-child {
-  margin-bottom: 0.8rem;
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
 }
 .card-face > div:last-child {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 0.5rem;
+  padding-top: 0.2rem;
 }
 .card-face::before {
   content: "";
@@ -168,7 +199,18 @@
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+.card-back h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.4rem;
+  color: rgb(235, 235, 255);
+  margin-bottom: 0.8rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+.card-back p {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 .card-back h3 {
   font-family: "Orbitron", sans-serif;
@@ -295,10 +337,10 @@ ul.features li::before {
     gap: 10px;
   }
   .card-inner {
-    min-height: 280px;
+    min-height: 320px;
   }
   .card-face {
-    padding: 12px;
+    padding: 10px 14px 16px;
   }
   .navbar-brand img {
     width: 25px !important;
@@ -309,12 +351,12 @@ ul.features li::before {
   }
   .card-front h2 {
     font-size: 1.1rem;
-    color: #FFFFFF;
+    color: rgb(240, 240, 255);
     text-shadow: 2px 2px 4px #000000, 0 0 8px rgba(0,0,0,0.8);
   }
   .card-front p, .card-front h3 {
     font-size: 0.85rem;
-    color: #FFFFFF;
+    color: rgb(255, 255, 255);
     text-shadow: 2px 2px 4px #000000, 0 0 6px rgba(0,0,0,0.7);
   }
 }
@@ -505,9 +547,8 @@ ul.features li::before {
 			<h2>Running Math</h2><video controls="" name="media" style="width:220px; height:50px;"><source src="Merkaba.mp3" type="audio/mpeg"></video><p>32:27   31.01.2026</p>
         </div>
         <div>
-          <p>This part is focused about mathematical approach in everything that is conected to running. From PB, to transitions between miles and kilometers, avarage weekly running times or distances, measuring calories, and putting brain into the science of basics of this sport. </h3>
+          <p>This part is focused about mathematical approach in everything that is conected to running. From PB, to transitions between miles and kilometers, avarage weekly running times or distances, measuring calories, and putting brain into the science of basics of this sport.</p>
         </div>
-		  <br>
       </div>
       <div class="card-face card-back">
                        <div>
