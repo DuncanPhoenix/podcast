@@ -28,8 +28,24 @@ body {
    text-align: center;
    z-index: 999;
 }
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .navbar-brand span {
   display: inline;
+  white-space: nowrap;
+}
+.navbar-toggle {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+}
+.navbar-toggle .icon-bar {
+  background-color: #fff !important;
+}
+.navbar-toggle:hover {
+  background-color: #555 !important;
 }
 @media (max-width: 768px) {
   .navbar-brand span {
@@ -87,30 +103,37 @@ body {
             <nav class="navbar navbar-inverse navbar-primary navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand"><img src="images/podcast1.png" alt="Lights" class="w3-image" style="float:left; margin:"10px; padding:"10px" width="70" height="30" href="#"><a class="navbar-brand" href="#"><p style="color: blue">Oxford </p><p style="color: red">Running </p><p style="color: white">Podcast </p></a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><img src="images/podcast1.png" alt="Lights" class="w3-image" style="float:left; margin: 10px; padding: 10px; margin-right: 8px;" width="70" height="30"> <span style="color: blue">Oxford</span> <span style="color: red">Running</span> <span style="color: white">Podcast</span></a>
                     </div>
-               
-                    <ul class="nav navbar-nav" style=" padding-left:250px;"> 
-                        <li class="home"><a href="index.html">About Us</a></li>
-                        <li><a href="races.html">Races</a></li>
-                        <li><a href="sessions&socials.html">Sessions&Socials</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-						<li><a href="podcast2026.html">Podcast RUN:OX</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                     <form class="navbar-form navbar-right" action="/action_page.php">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search" name="search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav"> 
+                            <li class="home"><a href="index.html">About Us</a></li>
+                            <li><a href="races.html">Races</a></li>
+                            <li><a href="sessions&socials.html">Sessions&Socials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="podcast2026.html">Podcast RUN:OX</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-right" action="/action_page.php">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="search">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                     </form>
+                        </form>
+                    </div>
                 </div>
             </nav>
-</head>
+        </body>
+        <body>
  <img src="images/skyline.png" alt="skyline" class="w3-image" width="100%" style="max-height: 300px; object-fit: cover; margin-top: 70px;">
  <p></p>
  <div class="container-fluid">
@@ -174,7 +197,6 @@ Whether you are looking to shave seconds off your PB or simply want to graduate 
 </body>
 
 </html>
-
 
 
 
