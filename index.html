@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -16,16 +16,73 @@
   </head>
 <body>
 <style>
+body {
+  padding-top: 70px;
+  overflow-x: hidden;
+}
 .footer {
    position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
    text-align: center;
+   z-index: 999;
+}
+.navbar-brand span {
+  display: inline;
+}
+@media (max-width: 768px) {
+  .navbar-brand span {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  .nav.navbar-nav {
+    padding-left: 0 !important;
+  }
+  .navbar-form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .navbar-form .form-control {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .navbar-brand img {
+    width: 40px !important;
+    height: auto !important;
+  }
+}
+.sidenav {
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .col-sm-2 {
+    display: none;
+  }
+  .col-sm-8 {
+    width: 100% !important;
+    padding: 10px !important;
+  }
+}
+@media (max-width: 480px) {
+  .w3-container {
+    padding: 8px !important;
+  }
+  h2 {
+    font-size: 1.3rem !important;
+  }
+  h3 {
+    font-size: 1.1rem !important;
+  }
+  p {
+    font-size: 0.95rem !important;
+  }
 }
 </style>
     <head>
-        <body style="height:1500px">
+        <body>
 
             <nav class="navbar navbar-inverse navbar-primary navbar-fixed-top">
                 <div class="container-fluid">
@@ -54,21 +111,21 @@
                 </div>
             </nav>
 </head>
- <img src="images/skyline.png" alt="skyline" class="w3-image" width="100%" height="300px" style="float:left">
+ <img src="images/skyline.png" alt="skyline" class="w3-image" width="100%" style="max-height: 300px; object-fit: cover; margin-top: 70px;">
  <p></p>
- <div class="w3-container w3-margin">
-
-    <div class="col-sm-2 sidenav" style="background-color: lightblue;>
+ <div class="container-fluid">
+   <div class="row">
+    <div class="col-sm-2 sidenav hidden-xs hidden-sm" style="background-color: lightblue;">
 		  <p></p>
         <h1 style="text-align:center;"><strong>OXRUNNERS</strong></h1>
 		<br>
-		<img src="images/generated-image-1 (5).png" height="500px">
+		<img src="images/generated-image-1 (5).png" style="width: 100%; max-width: 300px; height: auto;">
 		<br>
 
 	</div>
-  <div class="col-sm-8 text-left"> 
+  <div class="col-sm-8 col-xs-12 text-left"> 
 
-  <div class="w3-container w3-margin">
+  <div class="w3-container w3-margin" style="padding: 15px;">
   <h2><strong>Allrunners, joggers, and enthisiast! Welcome to your comfort zone! Area where you can learn, discuss and analyse running on all levels of performance.</strong></h2>
   <br>
 	  <p>Intruuction:</p>
