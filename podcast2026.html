@@ -13,17 +13,7 @@
     document.querySelectorAll(".card").forEach((card) => {
       const inner = card.querySelector(".card-inner");
 
-      // Tap/click flip met subtiele scale-bounce
-      card.addEventListener("click", () => {
-    const baseRotate = card.classList.contains("flipped") ? 0 : 180;
-    inner.style.transition = "transform 0.15s ease-out";
-    inner.style.transform = `rotateY(${baseRotate}deg) scale(1.05)`;
-    setTimeout(() => {
-      inner.style.transition = "transform 0.7s cubic-bezier(.4,.2,.2,1)";
-      inner.style.transform = `rotateY(${baseRotate}deg) scale(1)`;
-      card.classList.toggle("flipped");
-    }, 150);
-  });
+      // Flip disabled - cards stay on front face only
 
   if (!isTouch) {
     card.addEventListener("mousemove", (e) => {
@@ -34,12 +24,10 @@
       const centerY = rect.height / 2;
       const rotateX = ((y - centerY) / centerY) * -10;
       const rotateY = ((x - centerX) / centerX) * 10;
-      const baseRotate = card.classList.contains("flipped") ? 180 : 0;
-      inner.style.transform = `rotateY(${baseRotate}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1)`;
+      inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1)`;
     });
       card.addEventListener("mouseleave", () => {
-      const baseRotate = card.classList.contains("flipped") ? 180 : 0;
-      inner.style.transform = `rotateY(${baseRotate}deg) rotateX(0deg) rotateY(0deg) scale(1)`;
+      inner.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
     });
   }
 });
@@ -283,16 +271,25 @@ ul.features li::before {
   background: rgba(0, 255, 255, 0.1);
 }
 video {
-  border-radius: 8px;
-  border: 2px solid rgba(0, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 4px;
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+  border-radius: 12px;
+  border: 3px solid rgba(0, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 6px;
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.4), inset 0 0 10px rgba(0, 100, 150, 0.2);
   transition: all 0.3s ease;
+  filter: brightness(1.05) contrast(1.05);
+  width: 100% !important;
+  max-width: 240px;
+  height: auto !important;
 }
 video:hover {
-  border: 2px solid rgba(0, 255, 255, 0.6);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.5);
+  border: 3px solid rgba(0, 255, 255, 0.7);
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.6), inset 0 0 15px rgba(0, 150, 200, 0.3);
+  filter: brightness(1.1) contrast(1.1);
+}
+video::cue {
+  background: rgba(0, 200, 255, 0.2);
+  color: #FFFFFF;
 }
 
 @media (max-width: 768px) {
@@ -306,7 +303,7 @@ video:hover {
     padding: 10px;
   }
   .card-inner {
-    min-height: 320px;
+    height: 420px;
   }
   .card-face {
     padding: 18px;
@@ -329,8 +326,14 @@ video:hover {
     position: relative;
   }
   .navbar-brand span {
-    display: block;
+    display: inline;
     font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .navbar-brand {
+    text-align: center;
+    float: none !important;
+    width: auto;
   }
   .footer {
     position: relative;
