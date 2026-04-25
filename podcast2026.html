@@ -82,7 +82,12 @@
   </head>
 <body>
 <style>
-	body {
+	:root {
+  --radius: 16px;
+  --accent: #00FFFF;
+  --card-bg: rgba(20, 20, 40, 0.85);
+}
+body {
   background-image: url('images/podcast2.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -115,7 +120,7 @@
 .card-inner {
   position: relative;
   width: 100%;
-  min-height: 320px;
+  height: 420px;
   transform-style: preserve-3d;
   border-radius: var(--radius);
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -276,6 +281,19 @@ ul.features li::before {
 }
 .cta-buttons a.secondary:hover {
   background: rgba(0, 255, 255, 0.1);
+}
+video {
+  border-radius: 8px;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+  transition: all 0.3s ease;
+}
+video:hover {
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.5);
+}
 
 @media (max-width: 768px) {
   body {
@@ -296,14 +314,19 @@ ul.features li::before {
   .card-front h2 {
     font-size: 1.3rem;
     color: #FFFFFF;
-    text-shadow: 3px 3px 6px #000000, 0 0 10px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
     line-height: 1.2;
+    z-index: 3;
+    position: relative;
+    font-weight: bold;
   }
   .card-front p {
     font-size: 1rem;
     color: #FFFFFF;
-    text-shadow: 2px 2px 4px #000000, 0 0 8px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
     line-height: 1.4;
+    z-index: 3;
+    position: relative;
   }
   .navbar-brand span {
     display: block;
@@ -324,14 +347,18 @@ ul.features li::before {
     font-size: 1.2rem;
     margin-bottom: 0.3rem;
     color: #FFFFFF;
-    text-shadow: 3px 3px 6px #000000, 0 0 10px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
     line-height: 1.2;
+    z-index: 3;
+    position: relative;
   }
   .card-front p, .card-front h3 {
     font-size: 0.9rem;
     line-height: 1.3;
     color: #FFFFFF;
-    text-shadow: 2px 2px 4px #000000, 0 0 8px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
+    z-index: 3;
+    position: relative;
   }
   .navbar-form {
     margin-top: 10px;
@@ -348,7 +375,7 @@ ul.features li::before {
     gap: 10px;
   }
   .card-inner {
-    min-height: 320px;
+    height: 420px;
   }
   .card-face {
     padding: 10px 14px 16px;
@@ -363,12 +390,17 @@ ul.features li::before {
   .card-front h2 {
     font-size: 1.1rem;
     color: rgb(240, 240, 255);
-    text-shadow: 2px 2px 4px #000000, 0 0 8px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
+    z-index: 3;
+    position: relative;
+    font-weight: bold;
   }
   .card-front p, .card-front h3 {
     font-size: 0.85rem;
     color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 4px #000000, 0 0 6px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
+    z-index: 3;
+    position: relative;
   }
 }
 .card-front h2 {
