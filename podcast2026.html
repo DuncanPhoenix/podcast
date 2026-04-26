@@ -120,7 +120,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: var(--radius);
-  background: linear-gradient(135deg, rgba(20, 20, 40, 0.85) 0%, rgba(30, 10, 50, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(20, 20, 40, 0.9) 0%, rgba(30, 10, 50, 0.96) 100%), repeating-linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 50px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 0 0 2px rgba(100, 200, 255, 0.2);
   padding: 16px 20px 18px;
   display: flex;
@@ -131,7 +131,7 @@ body {
   transform-style: preserve-3d;
   transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
   background-blend-mode: overlay;
-  border: 1px solid rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.18);
   position: relative;
 }
 .card:hover .card-face {
@@ -144,7 +144,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.06) 1px, transparent 1px, transparent 40px), radial-gradient(ellipse at center, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.6) 100%);
   border-radius: var(--radius);
   z-index: 1;
   pointer-events: none;
@@ -297,8 +297,37 @@ ul.features li::before {
 .audio-player::cue {
   background: rgba(0, 200, 255, 0.2);
   color: #FFFFFF;
+}.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 0;
 }
-
+.navbar-brand .nav-logo {
+  width: 48px;
+  height: auto;
+}
+.navbar-brand .brand-text {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+@media (max-width: 768px) {
+  .navbar-brand .nav-logo {
+    width: 34px;
+  }
+  .navbar-brand .brand-text {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  .navbar-brand .nav-logo {
+    width: 30px;
+  }
+  .navbar-brand .brand-text {
+    font-size: 0.9rem;
+  }
+}
 @media (max-width: 768px) {
   body {
     padding: 10px;
@@ -365,7 +394,6 @@ ul.features li::before {
     border: 1px solid rgba(0, 255, 255, 0.25);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
   }
-  @media (max-width: 768px) {
     .main-panel-title {
       font-size: 2.4rem;
     }
@@ -373,16 +401,6 @@ ul.features li::before {
       font-size: 1.35rem;
       padding: 8px 16px;
     }
-  }
-  @media (max-width: 480px) {
-    .main-panel-title {
-      font-size: 2rem;
-    }
-    .episodes-header h2 {
-      font-size: 1.15rem;
-      padding: 6px 12px;
-    }
-  }
   .footer {
     position: relative;
     margin-top: 50px;
@@ -434,6 +452,13 @@ ul.features li::before {
   .navbar-brand img {
     width: 25px !important;
     height: 25px !important;
+  }
+  .main-panel-title {
+    font-size: 2rem;
+  }
+  .episodes-header h2 {
+    font-size: 1.15rem;
+    padding: 6px 12px;
   }
   h1 {
     font-size: 1.5rem;
@@ -562,7 +587,10 @@ ul.features li::before {
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand"><img src="images/e4a426a60e7748b283a51831664a5819.png" alt="Lights" class="w3-image" style="float:left; margin:10px; padding:10px" width="30" height="30" href="#"><a class="navbar-brand" href="#"><span style="color: blue">Oxford </span><span style="color: red">Running </span><span style="color: white">Podcast</span></a>
+                        <a class="navbar-brand" href="#">
+                          <img src="images/e4a426a60e7748b283a51831664a5819.png" alt="Podcast icon" class="nav-logo">
+                          <span class="brand-text"><span style="color: blue">Oxford </span><span style="color: red">Running </span><span style="color: white">Podcast</span></span>
+                        </a>
                     </div>
                
                     <div class="collapse navbar-collapse" id="myNavbar">
@@ -618,9 +646,9 @@ ul.features li::before {
   <br>
   <p></p>
    <h1 class="main-panel-title"><strong>Oxrunners Season 2026</strong></h1>
-	   <br>
-	 	  <div class="card-grid">
         <div class="episodes-header"><h2>All Episodes</h2></div>
+	   <br>
+	  	  <div class="card-grid">
 	  <!-- Card 1 -->
   <div class="card">
     <div class="card-inner">
