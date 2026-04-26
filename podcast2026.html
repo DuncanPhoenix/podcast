@@ -270,24 +270,31 @@ ul.features li::before {
 .cta-buttons a.secondary:hover {
   background: rgba(0, 255, 255, 0.1);
 }
-video {
+.audio-player {
   border-radius: 12px;
   border: 3px solid rgba(0, 255, 255, 0.4);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   padding: 6px;
   box-shadow: 0 0 20px rgba(0, 200, 255, 0.4), inset 0 0 10px rgba(0, 100, 150, 0.2);
   transition: all 0.3s ease;
   filter: brightness(1.05) contrast(1.05);
   width: 100% !important;
-  max-width: 240px;
-  height: auto !important;
+  max-width: 260px;
+  height: 40px !important;
 }
-video:hover {
+.audio-player:hover {
   border: 3px solid rgba(0, 255, 255, 0.7);
   box-shadow: 0 0 30px rgba(0, 200, 255, 0.6), inset 0 0 15px rgba(0, 150, 200, 0.3);
   filter: brightness(1.1) contrast(1.1);
 }
-video::cue {
+.audio-player::-webkit-media-controls-panel {
+  background: rgba(0, 0, 0, 0.85);
+}
+.audio-player::-webkit-media-controls-play-button,
+.audio-player::-webkit-media-controls-volume-slider {
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.9));
+}
+.audio-player::cue {
   background: rgba(0, 200, 255, 0.2);
   color: #FFFFFF;
 }
@@ -334,6 +341,47 @@ video::cue {
     text-align: center;
     float: none !important;
     width: auto;
+  }
+  .main-panel-title {
+    text-align: center;
+    color: orange;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 25px rgba(96, 12, 98, 0.9), 0 0 5px rgba(208, 220, 74, 0.8);
+    font-size: 3rem;
+    margin: 0.8rem 0 0.4rem;
+    letter-spacing: 0.8px;
+  }
+  .episodes-header {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 18px;
+  }
+  .episodes-header h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.55rem;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 10px 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+  }
+  @media (max-width: 768px) {
+    .main-panel-title {
+      font-size: 2.4rem;
+    }
+    .episodes-header h2 {
+      font-size: 1.35rem;
+      padding: 8px 16px;
+    }
+  }
+  @media (max-width: 480px) {
+    .main-panel-title {
+      font-size: 2rem;
+    }
+    .episodes-header h2 {
+      font-size: 1.15rem;
+      padding: 6px 12px;
+    }
   }
   .footer {
     position: relative;
@@ -569,9 +617,10 @@ video::cue {
         <div class="col-sm-8 col-xs-12 text-left"> 
   <br>
   <p></p>
-   <h1 style="text-align:center; color: orange; text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 25px rgb(96, 12, 98), 0 0 5px rgb(208, 220, 74);"><strong>Oxrunners Season 2026</strong></h1>
+   <h1 class="main-panel-title"><strong>Oxrunners Season 2026</strong></h1>
 	   <br>
-	  	  <div class="card-grid">
+	 	  <div class="card-grid">
+        <div class="episodes-header"><h2>All Episodes</h2></div>
 	  <!-- Card 1 -->
   <div class="card">
     <div class="card-inner">
