@@ -4,14 +4,14 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Running podcast</title>
-      <link rel="shortcut icon" href="images/podcast.png" type="image/x-icon" />
+      <link rel="shortcut icon" href="images/podca.png" type="image/x-icon" />
   </head>
 <body>
 <style>
@@ -28,13 +28,20 @@ body {
    z-index: 999;
 }
 .navbar-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 0;
+}
+.navbar-brand .nav-logo {
+  height: 2.1rem;
+  width: auto;
+  max-height: 48px;
 }
 .navbar-brand span {
-  display: inline;
+  display: inline-block;
   white-space: nowrap;
+  line-height: 1;
 }
 .navbar-toggle {
   background-color: #333 !important;
@@ -47,10 +54,11 @@ body {
   background-color: #555 !important;
 }
 @media (max-width: 768px) {
+  .navbar-brand .nav-logo {
+    height: 1.85rem;
+  }
   .navbar-brand span {
-    display: block;
-    font-size: 0.9rem;
-    line-height: 1.2;
+    font-size: 0.95rem;
   }
   .nav.navbar-nav {
     padding-left: 0 !important;
@@ -64,9 +72,8 @@ body {
   }
 }
 @media (max-width: 480px) {
-  .navbar-brand img {
-    width: 40px !important;
-    height: auto !important;
+  .navbar-brand .nav-logo {
+    height: 1.5rem;
   }
 }
 .sidenav {
@@ -99,7 +106,7 @@ body {
     <head>
         <body style="height:1500px">
 
-                 <nav class="navbar navbar-inverse navbar-primary navbar-fixed-top">
+                   <nav class="navbar navbar-inverse navbar-primary navbar-fixed-top">
 				
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
