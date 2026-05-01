@@ -28,13 +28,20 @@ body {
    z-index: 999;
 }
 .navbar-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 0;
+}
+.navbar-brand .nav-logo {
+  height: 2.1rem;
+  width: auto;
+  max-height: 48px;
 }
 .navbar-brand span {
-  display: inline;
+  display: inline-block;
   white-space: nowrap;
+  line-height: 1;
 }
 .navbar-toggle {
   background-color: #333 !important;
@@ -47,10 +54,11 @@ body {
   background-color: #555 !important;
 }
 @media (max-width: 768px) {
+  .navbar-brand .nav-logo {
+    height: 1.85rem;
+  }
   .navbar-brand span {
-    display: block;
-    font-size: 0.9rem;
-    line-height: 1.2;
+    font-size: 0.95rem;
   }
   .nav.navbar-nav {
     padding-left: 0 !important;
@@ -64,9 +72,8 @@ body {
   }
 }
 @media (max-width: 480px) {
-  .navbar-brand img {
-    width: 40px !important;
-    height: auto !important;
+  .navbar-brand .nav-logo {
+    height: 1.5rem;
   }
 }
 .sidenav {
