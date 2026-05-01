@@ -1,4 +1,4 @@
-﻿<!<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -30,18 +30,28 @@ body {
 .navbar-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0;
+  gap: 0.9rem;
+  padding-left: 0.9rem;
 }
 .navbar-brand .nav-logo {
-  height: 2.1rem;
+  height: 2.5rem;
   width: auto;
-  max-height: 48px;
+  max-height: 60px;
+  margin-right: 0.4rem;
+}
+.navbar-brand .brand-text span {
+  margin-right: 0.45rem;
 }
 .navbar-brand span {
   display: inline-block;
   white-space: nowrap;
   line-height: 1;
+}
+.navbar-nav {
+  margin-left: 1rem;
+}
+.navbar-nav > li {
+  margin-left: 0.35rem;
 }
 .navbar-toggle {
   background-color: #333 !important;
@@ -73,8 +83,15 @@ body {
 }
 @media (max-width: 480px) {
   .navbar-brand .nav-logo {
-    height: 1.5rem;
+    height: 1.7rem;
   }
+}
+.skyline-image {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  margin: 1rem 0;
+  display: block;
 }
 .sidenav {
   margin-bottom: 20px;
