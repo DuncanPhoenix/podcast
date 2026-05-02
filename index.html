@@ -1,20 +1,17 @@
 ﻿﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Running podcast</title>
-      <link rel="shortcut icon" href="images/podca.png" type="image/x-icon" />
-  </head>
-<body>
-<style>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Running podcast</title>
+    <link rel="shortcut icon" href="images/podcast2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/script1.js"></script>
+    <style>
 body {
   padding-top: 70px;
   overflow-x: hidden;
@@ -28,43 +25,45 @@ body {
    z-index: 999;
 }
 .navbar-brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 8px 0;
-  margin-left: 15px;
 }
-.navbar-brand .nav-logo {
-  width: 48px;
-  height: auto;
+.navbar-brand img {
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  margin-right: 8px;
+  width: 70px;
+  height: 30px;
 }
-.navbar-brand .brand-text {
-  font-weight: bold;
-  font-size: 2rem;
+.navbar-brand span {
+  display: inline;
+  white-space: nowrap;
+}
+.navbar-toggle {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+}
+.navbar-toggle .icon-bar {
+  background-color: #fff !important;
+}
+.navbar-toggle:hover {
+  background-color: #555 !important;
+}
+.sidenav {
+  margin-bottom: 20px;
+}
+.skyline-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-top: 70px;
 }
 @media (max-width: 768px) {
-  .navbar-brand .nav-logo {
-    width: 34px;
-  }
-  .navbar-brand .brand-text {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 480px) {
-  .navbar-brand .nav-logo {
-    width: 30px;
-  }
-  .navbar-brand .brand-text {
-    font-size: 1.1rem;
-  }
-}
-@media (max-width: 768px) {
-  .navbar-brand .nav-logo {
-    height: 1.85rem;
-  }
   .navbar-brand span {
-    font-size: 0.95rem;
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
   .nav.navbar-nav {
     padding-left: 0 !important;
@@ -76,37 +75,6 @@ body {
   .navbar-form .form-control {
     width: 100%;
   }
-}
-@media (max-width: 480px) {
-  .navbar-brand .nav-logo {
-    height: 1.7rem;
-  }
-  .navbar-brand {
-    text-align: center;
-  }
-  .navbar-brand .brand-text {
-    font-size: 2rem;
-  }
-  .nav.navbar-nav {
-    margin-left: 0;
-  }
-.nav.navbar-nav {
-  margin-left: 200px;
-}
-.navbar-form {
-  margin-right: 50px;
-}
-.skyline-image {
-  width: 100%;
-  max-height: 320px;
-  object-fit: cover;
-  margin-top: -50px;
-  display: block;
-}
-.sidenav {
-  margin-bottom: 20px;
-}
-@media (max-width: 768px) {
   .col-sm-2 {
     display: none;
   }
@@ -116,6 +84,10 @@ body {
   }
 }
 @media (max-width: 480px) {
+  .navbar-brand img {
+    width: 40px !important;
+    height: auto !important;
+  }
   .w3-container {
     padding: 8px !important;
   }
@@ -129,49 +101,44 @@ body {
     font-size: 0.95rem !important;
   }
 }
-</style>
-    <head>
-        <body style="height:1500px">
+    </style>
+</head>
+<body>
 
-                   <nav class="navbar navbar-inverse navbar-primary navbar-fixed-top">
-				
+            <nav class="navbar navbar-inverse navbar-primary navbar-fixed-top">
+                <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">
-                          <img src="images/e4a426a60e7748b283a51831664a5819.png" alt="Podcast icon" class="nav-logo">
-                          <span class="brand-text"><span style="color: blue">Oxford </span><span style="color: red">Running </span><span style="color: white">Podcast</span></span>
-                        </a>
+                        <a class="navbar-brand" href="#"><img src="images/podcast1.png" alt="Lights"> <span style="color: blue">Oxford</span> <span style="color: red">Running</span> <span style="color: white">Podcast</span></a>
                     </div>
-               
                     <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav"> 
-                        <li class="home"><a href="index.html"><strong>About Us</strong></a></li>
-                        <li><a href="races.html"><strong>Races</strong></a></li>
-                        <li><a href="sessions&socials.html"><strong>Sessions&Socials</strong></a></li>
-						<li><a href="podcast2026.html"><strong>Podcast RUN:OX</strong></a></li>
-                        <li><a href="contact.html"><strong>Contact</strong></a></li>
-                        
-                    </ul>
-                     <form class="navbar-form navbar-right" action="/action_page.php">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search" name="search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
+                        <ul class="nav navbar-nav"> 
+                            <li class="home"><a href="index.html">About Us</a></li>
+                            <li><a href="races.html">Races</a></li>
+                            <li><a href="sessions&socials.html">Sessions&Socials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="podcast2026.html">Podcast RUN:OX</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-right" action="/action_page.php">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="search">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                     </form>
-                     </div>
+                        </form>
+                    </div>
                 </div>
             </nav>
-		 <img src="images/skyline.png" alt="skyline" class="skyline-image">
-
-        <body>
+ <img src="images/skyline.png" alt="skyline" class="skyline-image">
+ <p></p>
  <div class="container-fluid">
    <div class="row">
     <div class="col-sm-2 sidenav hidden-xs hidden-sm" style="background-color: lightblue;">
@@ -180,13 +147,14 @@ body {
 		<br>
 		<img src="images/generated-image-1 (5).png" style="width: 100%; max-width: 300px; height: auto;">
 		<br>
+
 	</div>
   <div class="col-sm-8 col-xs-12 text-left"> 
 
   <div class="w3-container w3-margin" style="padding: 15px;">
   <h2><strong>Allrunners, joggers, and enthisiast! Welcome to your comfort zone! Area where you can learn, discuss and analyse running on all levels of performance.</strong></h2>
   <br>
-	  <p>Introduction:</p>
+	  <p>Intruuction:</p>
   <br>
   <br>
   <h2 style="text-align:center;">The Pavement Pioneers: Finding Your Stride in Mid-Distance Running </h2>
