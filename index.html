@@ -25,20 +25,20 @@ body {
    z-index: 999;
 }
 .navbar-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 0;
+  margin-left: 15px;
 }
-.navbar-brand img {
-  float: left;
-  margin: 10px;
-  padding: 10px;
-  margin-right: 8px;
-  width: 70px;
-  height: 30px;
+.navbar-brand .nav-logo {
+  width: 48px;
+  height: auto;
 }
-.navbar-brand span {
-  display: inline;
-  white-space: nowrap;
+.navbar-brand .brand-text {
+  font-weight: bold;
+  font-size: 2rem;
 }
 .navbar-toggle {
   background-color: #333 !important;
