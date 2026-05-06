@@ -90,6 +90,49 @@ body {
    text-align: center;
    z-index: 1000;
 }
+.sidenav {
+  min-height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #87ceeb 0%, #add8e6 100%) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  margin-bottom: 0;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.sidenav img {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+.container-fluid .row {
+  display: flex;
+  align-items: stretch;
+}
+.col-sm-8 {
+  background: linear-gradient(to bottom, #f5f9fc 0%, #ffffff 100%);
+  padding: 50px 40px !important;
+  line-height: 1.8;
+}
+.col-sm-8 h1 {
+  color: #1a5f7a;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  border-bottom: 3px solid #87ceeb;
+  padding-bottom: 15px;
+}
+.col-sm-8 p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -330,9 +373,9 @@ video:hover {
 .navbar-brand .nav-logo {
   width: 48px;
   height: auto;
+}
 
-	}
-	  .nav.navbar-nav {
+.nav.navbar-nav {
   margin-left: 210px;
 }
 
@@ -610,9 +653,7 @@ video:hover {
 </style>
     <head>
         <body>
-
             <nav class="navbar navbar-inverse navbar-primary navbar-fixed-top">
-				
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                             <span class="icon-bar"></span>
@@ -624,7 +665,6 @@ video:hover {
                           <span class="brand-text"><span style="color: blue">Oxford </span><span style="color: red">Running </span><span style="color: white">Podcast</span></span>
                         </a>
                     </div>
-               
                     <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav"> 
                         <li class="home"><a href="index.html"><strong>About Us</strong></a></li>
@@ -648,11 +688,10 @@ video:hover {
                 </div>
             </nav>
 </head>
- <p></p>
-	    
+ <p></p>   
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-2 sidenav hidden-xs" style="background-color: lightblue;">
+        <div class="col-sm-2 sidenav hidden-xs">
 		 <ul class="nav nav-pills flex-column flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" style=" padding-left:50px; padding-top:100px"> 
                         <a href="newest.html"><strong><h2>Newest</h2></strong></a>
 			            <br>
@@ -670,7 +709,7 @@ video:hover {
                              </ul>   
                     </ul>
 		<br>
-		<img src="images/generated-image-1 (9).png" style="width:60%;">
+		<img src="images/generated-image-1 (9).png" alt="Running bull logo" style="width:60%;">
     	<br>
 		<br>
 	</div>
@@ -678,6 +717,9 @@ video:hover {
   <br>
   <p></p>
    <h1 class="main-panel-title"><strong>Oxrunners Season 2026</strong></h1>
+   <p>Welcome to the Oxford Runners community! We're a group of passionate runners dedicated to improving fitness, building endurance, and enjoying the sport together. Whether you're a beginner or an experienced athlete, our sessions are designed to help you achieve your goals in a supportive environment.</p>
+   <p>Explore our weekly training schedules, connect with fellow runners, and discover tips for better performance. Join us for a season of running excellence!</p>
+   <br>
         <div class="episodes-header"><h2>All Episodes</h2></div>
 	   <br>
 	  	  <div class="card-grid">
@@ -701,7 +743,6 @@ video:hover {
       </div>
 	</div>
   </div>
-
       <!-- Card 2 -->
   <div class="card">
     <div class="card-inner">
@@ -799,7 +840,6 @@ video:hover {
       </div>
       <div class="card-face card-back">
         <div>
-          
         </div>
         <div class="cta-buttons">
           <a href="#" class="primary">Get Started</a>
@@ -824,7 +864,6 @@ video:hover {
       </div>
       <div class="card-face card-back">
         <div>
-          
         </div>
         <div class="cta-buttons">
           <a href="#" class="primary">Get Started</a>
@@ -874,7 +913,6 @@ video:hover {
       </div>
       <div class="card-face card-back">
         <div>
-    
         </div>
         <div class="cta-buttons">
           <a href="#" class="primary">Get Started</a>
@@ -899,7 +937,6 @@ video:hover {
       </div>
       <div class="card-face card-back">
         <div>
-          
         </div>
         <div class="cta-buttons">
           <a href="#" class="primary">Get Started</a>
@@ -924,7 +961,6 @@ video:hover {
       </div>
       <div class="card-face card-back">
         <div>
-    
         </div>
         <div class="cta-buttons">
           <a href="#" class="primary">Get Started</a>
@@ -960,7 +996,6 @@ video:hover {
   </div>
   </div>
   </div>
-  <br>
   <br>
 
   </div>
