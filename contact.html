@@ -101,8 +101,84 @@ body {
   display: block;
 }
 .sidenav {
-  margin-bottom: 20px;
+  min-height: calc(100vh - 70px);
+  background-color: #87ceeb !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  margin-bottom: 0;
 }
+.sidenav img {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.container-fluid .row.content {
+  display: flex;
+  align-items: stretch;
+}
+.col-sm-8 {
+  background-color: #f9f9f9;
+  padding: 40px 30px !important;
+  line-height: 1.8;
+}
+.col-sm-8 h2 {
+  color: #333;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  border-bottom: 3px solid #87ceeb;
+  padding-bottom: 15px;
+}
+.col-sm-8 p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+.w3-container {
+  background-color: #e8f4f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.w3-container h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+.w3-container p {
+  color: #555;
+  font-size: 1rem;
+}
+.w3-container a {
+  color: #0099cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.w3-container a:hover {
+  color: #0077aa;
+  text-decoration: underline;
+}
+.footer {
+  background: linear-gradient(135deg, #333 0%, #555 100%);
+  color: #fff;
+}
+.footer h6 {
+  color: #fff;
+  margin: 5px 0;
+}
+.footer a img {
+  transition: transform 0.3s ease;
+}
+.footer a img:hover {
+  transform: scale(1.2);
+}
+
 @media (max-width: 768px) {
   .col-sm-2 {
     display: none;
@@ -165,22 +241,17 @@ body {
 	      <img src="images/skyline.png" alt="skyline" class="w3-image skyline-image">
    <div class="container-fluid">
    <div class="row content">
-   <div class="col-sm-2 sidenav hidden-xs hidden-sm" style="background-color: lightblue;">
-		<img src="images/bull1.png">
+   <div class="col-sm-2 sidenav hidden-xs hidden-sm">
+		<img src="images/bull1.png" alt="OXRUNNERS logo">
    </div>
   <div class="col-sm-8 col-xs-12 text-left"> 
-  <br>
-  <p></p>
-   <h2 style="text-align:center;">Oxrunners</h2>
-
+   <h2>Oxford Runners</h2>
+   <p>Welcome to our community! Join us for an inspiring journey through the world of running, connecting passionate athletes and enthusiasts from around the globe.</p>
   </div>
-  <div class="w3-container w3-margin>
-  <br>
-  <br>
-	  <p>If you have any questions or comments please don't hesitate to contact us on our email:</p>
-	  <br>
-  <p style="text-align:center;">runox@gmail.com </p>
-	  <br>
+  <div class="w3-container w3-margin">
+  <h3 style="color: #333; margin-top: 0;">Get In Touch</h3>
+	  <p>Have questions or want to join our community? We'd love to hear from you!</p>
+	  <p style="text-align:center; font-weight: 600; font-size: 1.1rem;">📧 <a href="mailto:runox@gmail.com" style="color: #0099cc; text-decoration: none;">runox@gmail.com</a></p>
   </div>
 </div>
 <div class="footer">
