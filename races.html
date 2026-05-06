@@ -104,7 +104,75 @@ body {
   display: block;
 }
 .sidenav {
-  margin-bottom: 20px;
+  min-height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #87ceeb 0%, #add8e6 100%) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  margin-bottom: 0;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.sidenav img {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+.row.content {
+  display: flex;
+  align-items: stretch;
+}
+.col-sm-8 {
+  background: linear-gradient(to bottom, #f5f9fc 0%, #ffffff 100%);
+  padding: 50px 40px !important;
+  line-height: 1.8;
+}
+.col-sm-8 h2 {
+  color: #1a5f7a;
+  font-size: 2.1rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  border-bottom: 3px solid #87ceeb;
+  padding-bottom: 15px;
+}
+.col-sm-8 h3 {
+  color: #2a7f9e;
+  font-size: 1.3rem;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+.col-sm-8 h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.col-sm-8 h3 a:hover {
+  color: #0099cc;
+  text-decoration: underline;
+}
+.col-sm-8 p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+.w3-container {
+  background: linear-gradient(135deg, #e3f2fd 0%, #ecf5ff 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #87ceeb;
+}
+.skyline-image {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  margin-top: -50px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 @media (max-width: 768px) {
   .col-sm-2 {
@@ -112,12 +180,18 @@ body {
   }
   .col-sm-8 {
     width: 100% !important;
-    padding: 10px !important;
+    padding: 30px 15px !important;
+  }
+  .col-sm-8 h2 {
+    font-size: 1.5rem;
+  }
+  .navbar-form {
+    margin-right: 30px;
   }
 }
 @media (max-width: 480px) {
   .w3-container {
-    padding: 8px !important;
+    padding: 12px !important;
   }
   h2 {
     font-size: 1.3rem !important;
@@ -127,6 +201,9 @@ body {
   }
   p {
     font-size: 0.95rem !important;
+  }
+  .col-sm-8 {
+    padding: 20px 10px !important;
   }
 }
 </style>
@@ -169,15 +246,12 @@ body {
                      </div>
                 </div>
             </nav>
- <img src="images/skyline.png" alt="skyline" class="w3-image skyline-image style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding left: 50px;">
+ <img src="images/skyline.png" alt="skyline" class="skyline-image">
  <p></p>
  <div class="container-fluid">
    <div class="row">
-    <div class="col-sm-2 sidenav hidden-xs hidden-sm" style="background-color: lightblue; height: flexi;">
-		  <p></p>
-        <h1 style="text-align:center;"><strong>OXRUNNERS</strong></h1>
-		<br>
-		<img src="images/generated-image-1 (5).png" height="500px">
+    <div class="col-sm-2 sidenav hidden-xs hidden-sm">
+		<img src="images/generated-image-1 (5).png" alt="OXRUNNERS Bull">
 		<br>
 
 	</div>
