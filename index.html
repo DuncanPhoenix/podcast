@@ -80,8 +80,13 @@ body {
   flex: 0 0 96px;
 }
 .navbar-image-mobile img {
-  width: 64px;
+  width: 80px;
   height: auto;
+}
+.mobile-menu-links a:hover {
+  background-color: rgba(79, 156, 255, 0.1);
+  color: #004a99;
+  transition: all 0.3s ease;
 }
 .mobile-nav-panel {
   display: none;
@@ -110,6 +115,13 @@ body {
     font-size: 0.9rem;
     line-height: 1.2;
   }
+  .navbar-brand {
+    justify-content: center;
+    width: 100%;
+  }
+  .brand-text {
+    white-space: nowrap;
+  }
   .nav.navbar-nav {
     padding-left: 0 !important;
   }
@@ -131,6 +143,7 @@ body {
     flex-wrap: wrap;
     margin-bottom: 10px;
     width: 100%;
+    justify-content: flex-start;
   }
   .navbar-image-mobile {
     display: block;
@@ -403,7 +416,7 @@ body {
   <div class="col-sm-8 col-xs-12 text-left"> 
 
   <div class="w3-container w3-margin">
-  <h2 class="main-title"><strong>Oxford Runners Community Hub</strong></h2>
+  <h2 class="main-title"><strong>Oxford Running Podcast</strong></h2>
   <p>Whether you're just starting your running journey or you're a seasoned athlete, you've found your place. We bring together runners of all levels to share expertise, encourage each other, and celebrate the joy of running in our vibrant community.</p>
   <h3>Why Join Us?</h3>
   <p>Our community offers structured training sessions, expert coaching, social events, and a supportive environment where every runner matters. From beginners building their first 5K to marathoners chasing personal bests, there's a place for everyone.</p>
@@ -451,7 +464,6 @@ Whether you are looking to shave seconds off your PB or simply want to graduate 
 </footer>
 </body>
 </html>
-
 
 
 
