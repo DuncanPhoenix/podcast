@@ -52,6 +52,22 @@ body {
 }
 .navbar-toggle:hover {
   background-color: #555 !important;
+  transform: translateY(-1px);
+}
+.navbar-toggle {
+  transition: transform 0.25s ease;
+}
+.navbar-toggle .icon-bar {
+  transition: all 0.25s ease;
+}
+.navbar-toggle:not(.collapsed) .icon-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.navbar-toggle:not(.collapsed) .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle:not(.collapsed) .icon-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .navbar-form {
@@ -61,10 +77,24 @@ body {
   display: none;
   text-align: center;
   padding: 10px 0;
+  flex: 0 0 96px;
 }
 .navbar-image-mobile img {
   width: 64px;
   height: auto;
+}
+.mobile-nav-panel {
+  display: none;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.mobile-menu-links {
+  flex: 1 1 60%;
+}
+.mobile-search-form {
+  width: 100%;
+  margin-top: 12px;
 }
 .skyline-image {
   width: 100%;
@@ -83,6 +113,9 @@ body {
   .nav.navbar-nav {
     padding-left: 0 !important;
   }
+  .collapse > .nav.navbar-nav {
+    display: none !important;
+  }
   .navbar-form {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -93,12 +126,32 @@ body {
   .col-sm-2 {
     display: none;
   }
+  .mobile-nav-panel {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    width: 100%;
+  }
   .navbar-image-mobile {
     display: block;
+  }
+  .mobile-menu-links {
+    flex: 1 1 calc(100% - 110px);
+  }
+  .mobile-menu-links li {
+    width: 100%;
+  }
+  .mobile-search-form {
+    width: 100%;
+    margin-top: 12px;
+    float: none !important;
   }
   .col-sm-8 {
     width: 100% !important;
     padding: 10px !important;
+  }
+  .container-fluid {
+    margin-top: 10px;
   }
 }
 @media (max-width: 480px) {
@@ -115,23 +168,6 @@ body {
   .sidenav {
     margin-top: 10px;
   }
-  .navbar-brand img {
-    width: 40px !important;
-    height: auto !important;
-  }
-  .w3-container {
-    padding: 8px !important;
-  }
-  h2 {
-    font-size: 1.3rem !important;
-  }
-  h3 {
-    font-size: 1.1rem !important;
-  }
-  p {
-    font-size: 0.95rem !important;
-  }
-}
   .navbar-brand img {
     width: 40px !important;
     height: auto !important;
@@ -332,7 +368,19 @@ body {
                         <li><a href="contact.html"><strong>Contact</strong></a></li>
                         
                     </ul>
-                     <form class="navbar-form navbar-right" action="/action_page.php">
+                     <div class="mobile-nav-panel">
+                       <ul class="nav navbar-nav mobile-menu-links">
+                        <li class="home"><a href="index.html"><strong>About Us</strong></a></li>
+                        <li><a href="races.html"><strong>Races</strong></a></li>
+                        <li><a href="sessions&socials.html"><strong>Sessions&Socials</strong></a></li>
+                        <li><a href="podcast2026.html"><strong>Podcast RUN:OX</strong></a></li>
+                        <li><a href="contact.html"><strong>Contact</strong></a></li>
+                       </ul>
+                       <div class="navbar-image-mobile visible-xs-block visible-sm-block">
+                         <img src="images/generated-image-1 (5).png" alt="OXRUNNERS logo">
+                       </div>
+                     </div>
+                     <form class="navbar-form navbar-right mobile-search-form" action="/action_page.php">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="search">
                             <div class="input-group-btn">
@@ -342,9 +390,6 @@ body {
                             </div>
                         </div>
                      </form>
-                     <div class="navbar-image-mobile visible-xs-block visible-sm-block">
-                       <img src="images/generated-image-1 (5).png" alt="OXRUNNERS logo">
-                     </div>
                      </div>
                 </div>
             </nav>
@@ -406,7 +451,6 @@ Whether you are looking to shave seconds off your PB or simply want to graduate 
 </footer>
 </body>
 </html>
-
 
 
 
