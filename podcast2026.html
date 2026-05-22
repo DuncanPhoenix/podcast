@@ -23,6 +23,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <button type="button" class="navbar-toggle sidenav-toggle" aria-label="Open menu" aria-controls="mobileSidenav">
+        <span class="fa fa-bars"></span>
+      </button>
       <a class="navbar-brand" href="#">
         <img src="images/e4a426a60e7748b283a51831664a5819.png" alt="Podcast icon" class="nav-logo">
         <span class="brand-text">
@@ -62,6 +65,18 @@
       <!-- Sidebar Navigation -->
       <div class="col-sm-2 sidenav hidden-xs">
         <div class="nav" style="margin-top: 60px;">
+          <a href="newest.html" class="nav-link"><h2>Newest</h2></a>
+          <a href="newest.html" class="nav-link"><h2>Popular</h2></a>
+          <a href="podcast.html" class="nav-link"><h2>About Podcast</h2></a>
+          <a href="blog.html" class="nav-link"><i class="fi fi-rr-pencil"></i> Blog</a>
+          <a href="lifestyle.html" class="nav-link"><h2>Categories</h2></a>
+        </div>
+        <img src="images/generated-image-1 (9).png" alt="Running bull logo" class="sidenav-logo" />
+      </div>
+      <!-- Mobile Sidenav -->
+      <div id="mobileSidenav" class="sidenav-mobile">
+        <button class="close-sidenav" aria-label="Close menu">&times;</button>
+        <div class="nav">
           <a href="newest.html" class="nav-link"><h2>Newest</h2></a>
           <a href="newest.html" class="nav-link"><h2>Popular</h2></a>
           <a href="podcast.html" class="nav-link"><h2>About Podcast</h2></a>
@@ -404,6 +419,30 @@
   
   <!-- Custom Script -->
   <script src="script.js"></script>
+  <script>
+    // Mobile sidenav toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidenav = document.getElementById('mobileSidenav');
+      var openBtn = document.querySelector('.sidenav-toggle');
+      var closeBtn = document.querySelector('.close-sidenav');
+      if (openBtn && sidenav) {
+        openBtn.addEventListener('click', function() {
+          sidenav.classList.add('open');
+        });
+      }
+      if (closeBtn && sidenav) {
+        closeBtn.addEventListener('click', function() {
+          sidenav.classList.remove('open');
+        });
+      }
+      // Close on overlay click
+      sidenav && sidenav.addEventListener('click', function(e) {
+        if (e.target === sidenav) {
+          sidenav.classList.remove('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 
