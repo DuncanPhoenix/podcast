@@ -1,0 +1,761 @@
+/* Root Variables */
+:root {
+  --radius: 16px;
+  --accent: #00FFFF;
+  --card-bg: rgba(20, 20, 40, 0.85);
+  --transition-smooth: cubic-bezier(0.4, 0.2, 0.2, 1);
+  --transition-fast: 0.3s ease;
+  --pulse-duration: 2.5s;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('images/podcast2.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 0;
+  margin-left: 15px;
+}
+
+.navbar-brand .nav-logo {
+  width: 48px;
+  height: auto;
+}
+
+.navbar-brand .brand-text {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.nav.navbar-nav {
+  margin-left: 210px;
+}
+
+.navbar-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+/* Layout */
+.container-fluid .row {
+  display: flex;
+  align-items: stretch;
+}
+
+.col-sm-8 {
+  padding: 50px 40px !important;
+  line-height: 1.8;
+}
+
+.col-sm-8 h1 {
+  color: #1a5f7a;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  border-bottom: 3px solid #87ceeb;
+  padding-bottom: 15px;
+}
+
+.col-sm-8 p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+
+.col-sm-8 a {
+  color: #2a7f9e;
+  text-decoration: none;
+  background-color: rgba(255, 255, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.col-sm-8 a:hover {
+  background-color: rgba(255, 255, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Sidebar */
+.sidenav {
+  min-height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #87ceeb 0%, #add8e6 100%) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px 15px;
+  margin-bottom: 0;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+  gap: 12px;
+}
+
+.sidenav .nav {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.sidenav .nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidenav .nav a:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+  transform: translateX(4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.sidenav .nav a h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sidenav .navbar-toggler {
+  background: linear-gradient(135deg, rgba(135, 206, 235, 0.9) 0%, rgba(173, 216, 230, 0.8) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sidenav .navbar-toggler:hover {
+  background: linear-gradient(135deg, rgba(135, 206, 235, 1) 0%, rgba(173, 216, 230, 1) 100%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.sidenav .dropdown-menu {
+  background: linear-gradient(135deg, rgba(200, 230, 250, 0.95) 0%, rgba(220, 240, 255, 0.95) 100%);
+  border: 1px solid rgba(135, 206, 235, 0.4);
+  border-radius: 12px;
+  padding: 12px 0;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidenav .dropdown-menu a {
+  color: #1a5f7a;
+  padding: 12px 18px;
+  display: block;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin: 0 8px;
+}
+
+.sidenav .dropdown-menu a:hover {
+  background: linear-gradient(135deg, rgba(135, 206, 235, 0.4) 0%, rgba(100, 180, 220, 0.3) 100%);
+  transform: translateX(8px);
+  color: #0a3050;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sidenav img {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.sidenav-logo {
+  width: 60%;
+  margin-top: 20px;
+}
+
+/* Categories Dropdown */
+.categories-dropdown {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categories-dropdown .navbar-toggler {
+  width: 100%;
+  max-width: 200px;
+}
+
+.dropdown-toggle-label {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 14px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  transform-style: preserve-3d;
+  border-radius: var(--radius);
+  transition: transform 0.7s var(--transition-smooth);
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(20, 20, 40, 0.9) 0%, rgba(30, 10, 50, 0.96) 100%), 
+              repeating-linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 50px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 
+              0 4px 16px rgba(0, 0, 0, 0.3), 
+              inset 0 0 0 2px rgba(100, 200, 255, 0.2);
+  padding: 16px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
+  background-blend-mode: overlay;
+  border: 1px solid rgba(0, 255, 255, 0.18);
+}
+
+.card:hover .card-face {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 
+              0 10px 30px rgba(0, 0, 0, 0.4), 
+              0 0 40px rgba(0, 200, 255, 0.4), 
+              inset 0 0 30px rgba(0, 255, 255, 0.1);
+  transform: translateY(-5px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: linear-gradient(135deg, rgba(20, 20, 50, 0.9) 0%, rgba(40, 15, 60, 0.95) 100%);
+}
+
+.card-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.06) 1px, transparent 1px, transparent 40px), 
+              radial-gradient(ellipse at center, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.6) 100%);
+  border-radius: var(--radius);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.3),
+              0 0 50px rgba(0, 150, 255, 0.15),
+              inset 0 0 80px rgba(0, 255, 255, 0.08);
+  opacity: 0.4;
+  transition: opacity 0.4s;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card:hover .card-face::before,
+.card.flipped .card-face::before {
+  opacity: 0.7;
+  animation: podcastPulse var(--pulse-duration) infinite alternate;
+}
+
+@keyframes podcastPulse {
+  0% {
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.4),
+                0 0 50px rgba(0, 150, 255, 0.2),
+                inset 0 0 80px rgba(0, 200, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6),
+                0 0 80px rgba(100, 200, 255, 0.3),
+                inset 0 0 120px rgba(0, 200, 255, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.4),
+                0 0 50px rgba(0, 150, 255, 0.2),
+                inset 0 0 80px rgba(0, 200, 255, 0.1);
+  }
+}
+
+/* Card Face Divs */
+.card-face > div:first-child {
+  margin-bottom: 0.4rem;
+  margin-top: 0.1rem;
+  z-index: 3;
+  position: relative;
+}
+
+.card-face > div:nth-child(2) {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 0.3rem;
+  z-index: 3;
+  position: relative;
+}
+
+.card-face > div:last-child {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+  z-index: 3;
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--transition-smooth);
+}
+
+.card:hover .card-face > div:last-child {
+  max-height: 120px;
+}
+
+/* Card Back */
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-back h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.4rem;
+  color: rgb(235, 235, 255);
+  margin-bottom: 0.8rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+.card-back p {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.card-back h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.4rem;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+/* Card Front */
+.card-front h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
+  font-weight: bold;
+  line-height: 1.2;
+  z-index: 3;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.card-front p,
+.card-front h3 {
+  font-size: 1.35rem;
+  color: #E8E8FF;
+  line-height: 1.4;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
+  margin-bottom: 0.4rem;
+  z-index: 3;
+  position: relative;
+}
+
+/* Background Classes (Consolidated) */
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven, .twelve {
+  background: url("images/vago.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Feature List */
+ul.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.features li {
+  margin-bottom: 0.6rem;
+  padding-left: 1.4rem;
+  position: relative;
+  color: black;
+  font-size: 0.95rem;
+}
+
+ul.features li::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  color: black;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.cta-buttons a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.cta-buttons a.primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.cta-buttons a.primary:hover {
+  background: #00ffff;
+}
+
+.cta-buttons a.secondary {
+  border: 1px solid var(--accent);
+  color: black;
+}
+
+.cta-buttons a.secondary:hover {
+  background: rgba(0, 255, 255, 0.1);
+}
+
+/* Audio Player */
+.audio-player {
+  border-radius: 12px;
+  border: 3px solid rgba(0, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.75);
+  padding: 6px;
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.4), inset 0 0 10px rgba(0, 100, 150, 0.2);
+  transition: all var(--transition-fast);
+  filter: brightness(1.05) contrast(1.05);
+  width: 100% !important;
+  max-width: 260px;
+  height: 40px !important;
+}
+
+.audio-player:hover {
+  border: 3px solid rgba(0, 255, 255, 0.7);
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.6), inset 0 0 15px rgba(0, 150, 200, 0.3);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.audio-player::-webkit-media-controls-panel {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.audio-player::-webkit-media-controls-play-button,
+.audio-player::-webkit-media-controls-volume-slider {
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.9));
+}
+
+.audio-player::cue {
+  background: rgba(0, 200, 255, 0.2);
+  color: #FFFFFF;
+}
+
+/* Video */
+video {
+  border-radius: 10px;
+}
+
+video:hover {
+  border-radius: 10px;
+}
+
+/* Main Title */
+.main-panel-title {
+  text-align: center;
+  color: orange;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 25px rgba(96, 12, 98, 0.9), 0 0 5px rgba(208, 220, 74, 0.8);
+  font-size: 3rem;
+  margin: 0.8rem 0 0.4rem;
+  letter-spacing: 0.8px;
+}
+
+/* Episodes Header */
+.episodes-header {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.episodes-header h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.55rem;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Utility */
+.hidden-xs {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-brand .nav-logo {
+    width: 34px;
+  }
+
+  .navbar-brand .brand-text {
+    font-size: 0.95rem;
+  }
+
+  body {
+    padding: 10px;
+    background-attachment: scroll;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .card-inner {
+    height: 280px;
+  }
+
+  .card-face {
+    padding: 18px;
+  }
+
+  .card-front h2 {
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
+    line-height: 1.2;
+    z-index: 3;
+    position: relative;
+    font-weight: bold;
+  }
+
+  .card-front p {
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
+    line-height: 1.4;
+    z-index: 3;
+    position: relative;
+  }
+
+  .navbar-brand span {
+    display: inline;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .navbar-brand {
+    text-align: center;
+    float: none !important;
+    width: auto;
+  }
+
+  .main-panel-title {
+    font-size: 2.4rem;
+  }
+
+  .episodes-header h2 {
+    font-size: 1.35rem;
+    padding: 8px 16px;
+  }
+
+  .footer {
+    position: relative;
+    margin-top: 50px;
+  }
+
+  .col-sm-2 {
+    display: none;
+  }
+
+  .col-sm-8 {
+    width: 100%;
+    padding: 0;
+  }
+
+  .card-front h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
+    line-height: 1.2;
+    z-index: 3;
+    position: relative;
+  }
+
+  .card-front p,
+  .card-front h3 {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    color: #FFFFFF;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
+    z-index: 3;
+    position: relative;
+  }
+
+  .navbar-form {
+    margin-right: 50px;
+  }
+
+  .navbar-form .form-control {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand .nav-logo {
+    width: 30px;
+  }
+
+  .navbar-brand .brand-text {
+    font-size: 0.9rem;
+  }
+
+  .card-grid {
+    padding: 5px;
+    gap: 10px;
+  }
+
+  .card-inner {
+    height: 280px;
+  }
+
+  .card-face {
+    padding: 10px 14px 16px;
+  }
+
+  .navbar-brand img {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .main-panel-title {
+    font-size: 2.4rem;
+  }
+
+  .episodes-header h2 {
+    font-size: 1.15rem;
+    padding: 6px 12px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-front h2 {
+    font-size: 1.15rem;
+    color: rgb(240, 240, 255);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
+    z-index: 3;
+    position: relative;
+    font-weight: bold;
+  }
+
+  .card-front p,
+  .card-front h3 {
+    font-size: 0.9rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
+    z-index: 3;
+    position: relative;
+  }
+}
