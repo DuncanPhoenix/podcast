@@ -596,7 +596,7 @@ video:hover {
   }
 
   .navbar-brand .brand-text {
-    font-size: 0.95rem;
+    font-size: 1.35rem;
   }
 
   body {
@@ -611,7 +611,7 @@ video:hover {
   }
 
   .card-inner {
-    height: 280px;
+    height: 200px;
   }
 
   .card-face {
@@ -619,7 +619,7 @@ video:hover {
   }
 
   .card-front h2 {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: #FFFFFF;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
     line-height: 1.2;
@@ -628,11 +628,12 @@ video:hover {
     font-weight: bold;
   }
 
-  .card-front p {
-    font-size: 1.1rem;
+  .card-front p,
+  .card-front h3 {
+    font-size: 0.95rem;
+    line-height: 1.3;
     color: #FFFFFF;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
-    line-height: 1.4;
     z-index: 3;
     position: relative;
   }
@@ -650,7 +651,7 @@ video:hover {
   }
 
   .main-panel-title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .episodes-header h2 {
@@ -757,5 +758,85 @@ video:hover {
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
     z-index: 3;
     position: relative;
+  }
+}
+
+/* --- Mobile Sidenav Styles --- */
+.sidenav-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0;
+  background: rgba(30, 40, 60, 0.97);
+  z-index: 2000;
+  overflow-x: hidden;
+  transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 2px 0 24px rgba(0,0,0,0.25);
+}
+.sidenav-mobile.open {
+  display: block;
+  width: 80vw;
+  min-width: 220px;
+  max-width: 320px;
+}
+.sidenav-mobile .close-sidenav {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  cursor: pointer;
+  z-index: 2100;
+}
+.sidenav-mobile .nav {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 0 24px;
+}
+.sidenav-mobile .nav-link h2 {
+  font-size: 1.35rem;
+}
+.sidenav-mobile .sidenav-logo {
+  width: 70%;
+  margin: 32px auto 0 auto;
+  display: block;
+}
+@media (max-width: 991px) {
+  .sidenav.hidden-xs {
+    display: none !important;
+  }
+  .sidenav-mobile {
+    display: none;
+  }
+  .sidenav-mobile.open {
+    display: block;
+  }
+  .sidenav-toggle {
+    display: inline-block !important;
+    margin-left: 12px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    vertical-align: middle;
+  }
+}
+@media (max-width: 768px) {
+  .card-inner {
+    height: 140px;
+  }
+  .card-front h2 {
+    font-size: 1.35rem;
+  }
+  .card-front p,
+  .card-front h3 {
+    font-size: 1.15rem;
   }
 }
