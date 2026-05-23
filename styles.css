@@ -829,29 +829,21 @@ video:hover {
   }
 }
 @media (max-width: 768px) {
+  /* Unify and increase card height for mobile, ensure all cards are same size */
   .card-inner {
-    height: 140px;
+    height: 240px !important;
+    min-height: 240px !important;
+    max-height: 240px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .card-front h2 {
-    font-size: 1.35rem;
+    font-size: 1.7rem;
   }
   .card-front p,
   .card-front h3 {
-    font-size: 1.15rem;
-  }
-}
-
-/* --- Card and Main Content Responsive Styles --- */
-@media (max-width: 768px) {
-  .card-inner {
-    height: 120px;
-  }
-  .card-front h2 {
-    font-size: 1.5rem;
-  }
-  .card-front p,
-  .card-front h3 {
-    font-size: 1.2rem;
+    font-size: 1.22rem;
   }
   .col-sm-8, .col-xs-12, .text-left {
     font-size: 1.18rem;
@@ -859,8 +851,25 @@ video:hover {
   }
   .main-panel-title {
     color: #ffe600 !important;
-    font-size: 2.1rem;
+    font-size: 2.5rem;
     text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 0 15px rgba(0,0,0,0.2);
+  }
+  /* Move navbar links to the left on mobile */
+  .navbar-nav {
+    float: left !important;
+    text-align: left !important;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  .navbar-nav > li {
+    float: none !important;
+    display: block;
+    text-align: left;
+  }
+  /* Enlarge font of the title on mobile navbar */
+  .navbar-brand .brand-text {
+    font-size: 2.1rem !important;
+    line-height: 1.2;
   }
 }
 
