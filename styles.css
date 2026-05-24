@@ -97,20 +97,31 @@ body {
 /* Sidebar */
 .sidenav {
   min-height: calc(100vh - 70px);
-  background: linear-gradient(135deg, #87ceeb 0%, #add8e6 100%) !important;
+  background: linear-gradient(135deg, #1a5f7a 0%, #87ceeb 100%) !important;
+  border-radius: 0 24px 24px 0;
+  box-shadow: 2px 0 24px rgba(30,60,120,0.10);
+  padding-top: 60px;
+  padding-bottom: 40px;
+  min-width: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 30px 15px;
-  margin-bottom: 0;
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
   gap: 12px;
 }
 
-.sidenav .nav {
-  margin-bottom: 20px;
-    gap: 0;
+.sidenav .nav, .sidenav ul.nav {
+  gap: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.sidenav .nav li, .sidenav ul.nav li {
+  width: 100%;
+  margin-bottom: 18px;
+}
+.sidenav .nav li:last-child, .sidenav ul.nav li:last-child {
+  margin-bottom: 0;
 }
 
 .sidenav .nav a {
@@ -810,14 +821,20 @@ video:hover {
   font-size: 1.25rem;
   font-weight: 600;
   padding: 18px 16px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.08);
-  color: #1a5f7a;
-  transition: background 0.2s, color 0.2s;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid rgba(255,255,255,0.13);
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
-.sidebar-link:hover {
+.sidebar-link:hover, .sidebar-link:focus {
   background: #ffe600;
-  color: #222;
+  color: #1a5f7a;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border-color: #ffe600;
 }
 
 /* Focus styles for accessibility */
