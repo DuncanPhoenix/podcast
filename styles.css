@@ -249,33 +249,41 @@ body {
 /* Card Grid */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px 20px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 0 30px 0;
+  align-items: stretch;
+  justify-items: stretch;
 }
-    .navbar-brand .brand-text {
-      font-size: 2.1rem !important;
-      line-height: 1.2;
-    }
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.12);
+  transition: box-shadow 0.3s var(--transition-smooth), transform 0.3s var(--transition-smooth);
   cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card-inner {
   position: relative;
   width: 100%;
-  height: 260px;
+  min-height: 260px;
+  height: 100%;
   transform-style: preserve-3d;
   border-radius: var(--radius);
   transition: transform 0.7s var(--transition-smooth);
-}
-
-.card.flipped .card-inner {
-  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-face {
@@ -284,113 +292,35 @@ body {
   border-radius: var(--radius);
   background: linear-gradient(135deg, rgba(20, 20, 40, 0.9) 0%, rgba(30, 10, 50, 0.96) 100%), 
               repeating-linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 50px);
-    .card-front h2 {
-      font-size: 1.35rem;
-      color: rgb(240, 240, 255);
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
-      z-index: 3;
-      position: relative;
-      font-weight: bold;
-    }
   backface-visibility: hidden;
-    .card-front h3 {
-      font-size: 1.08rem;
   background-blend-mode: overlay;
   border: 1px solid rgba(0, 255, 255, 0.18);
 }
 
-.card:hover .card-face {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 
-              0 10px 30px rgba(0, 0, 0, 0.4), 
-              0 0 40px rgba(0, 200, 255, 0.4), 
-              inset 0 0 30px rgba(0, 255, 255, 0.1);
-  transform: translateY(-5px);
-  border: 1px solid rgba(0, 255, 255, 0.3);
-  background: linear-gradient(135deg, rgba(20, 20, 50, 0.9) 0%, rgba(40, 15, 60, 0.95) 100%);
+/* Remove any stray/duplicate .card-grid, .card, .card-inner, .card-face blocks below this comment to avoid conflicts. */
+/* Card Front */
+.card-front h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
+  font-weight: bold;
+  line-height: 1.2;
+  z-index: 3;
+  position: relative;
+  letter-spacing: 0.5px;
 }
 
-.card-face::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.06) 1px, transparent 1px, transparent 40px), 
-              radial-gradient(ellipse at center, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.6) 100%);
-  border-radius: var(--radius);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.card-face::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.3),
-              0 0 50px rgba(0, 150, 255, 0.15),
-              inset 0 0 80px rgba(0, 255, 255, 0.08);
-  opacity: 0.4;
-  transition: opacity 0.4s;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.card:hover .card-face::before,
-.card.flipped .card-face::before {
-  opacity: 0.7;
-  animation: podcastPulse var(--pulse-duration) infinite alternate;
-}
-
-@keyframes podcastPulse {
-  0% {
-    box-shadow: 0 0 25px rgba(0, 200, 255, 0.4),
-                0 0 50px rgba(0, 150, 255, 0.2),
-                inset 0 0 80px rgba(0, 200, 255, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6),
-                0 0 80px rgba(100, 200, 255, 0.3),
-                inset 0 0 120px rgba(0, 200, 255, 0.15);
-  }
-  100% {
-    box-shadow: 0 0 25px rgba(0, 200, 255, 0.4),
-                0 0 50px rgba(0, 150, 255, 0.2),
-                inset 0 0 80px rgba(0, 200, 255, 0.1);
-  }
-}
-
-/* Card Face Divs */
-.card-face > div:first-child {
+.card-front p,
+.card-front h3 {
+  font-size: 1.35rem;
+  color: #E8E8FF;
+  line-height: 1.4;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
   margin-bottom: 0.4rem;
-  margin-top: 0.1rem;
   z-index: 3;
   position: relative;
-}
-
-.card-face > div:nth-child(2) {
-  flex-grow: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 0.3rem;
-  z-index: 3;
-  position: relative;
-}
-
-.card-face > div:last-child {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-top: 0.5rem;
-  z-index: 3;
-  position: relative;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s var(--transition-smooth);
-}
-
-.card:hover .card-face > div:last-child {
-  max-height: 120px;
 }
 
 /* Card Back */
@@ -419,31 +349,6 @@ body {
   font-size: 1.4rem;
   color: black;
   margin-bottom: 1rem;
-}
-
-/* Card Front */
-.card-front h2 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.8rem;
-  color: #FFFFFF;
-  margin-bottom: 0.6rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
-  font-weight: bold;
-  line-height: 1.2;
-  z-index: 3;
-  position: relative;
-  letter-spacing: 0.5px;
-}
-
-.card-front p,
-.card-front h3 {
-  font-size: 1.35rem;
-  color: #E8E8FF;
-  line-height: 1.4;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
-  margin-bottom: 0.4rem;
-  z-index: 3;
-  position: relative;
 }
 
 /* Background Classes (Consolidated) */
@@ -895,4 +800,72 @@ video:hover {
   color: #ffe600 !important;
   font-size: 3.2rem;
   text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Sidebar link uniform style */
+.sidebar-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 18px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  color: #1a5f7a;
+  transition: background 0.2s, color 0.2s;
+}
+.sidebar-link:hover {
+  background: #ffe600;
+  color: #222;
+}
+
+.sidenav .nav,
+.sidenav ul.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.sidenav .nav li,
+.sidenav ul.nav li {
+  width: 100%;
+  margin-bottom: 18px;
+}
+.sidenav .nav li:last-child,
+.sidenav ul.nav li:last-child {
+  margin-bottom: 0;
+}
+
+/* Card grid and container fixes */
+.col-sm-8.col-xs-12.text-left {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+.card-grid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 0 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+  justify-items: stretch;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  height: 100%;
 }
