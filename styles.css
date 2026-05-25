@@ -184,77 +184,65 @@ body {
 }
 
 .sidenav .dropdown-menu {
-  background: linear-gradient(135deg, rgba(200, 230, 250, 0.95) 0%, rgba(220, 240, 255, 0.95) 100%);
-  border: 1px solid rgba(135, 206, 235, 0.4);
-  border-radius: 12px;
-  padding: 12px 0;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px) scaleY(0.95);
+  transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(200, 230, 250, 0.97) 0%, rgba(220, 240, 255, 0.97) 100%);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 180px;
+  z-index: 1000;
 }
-
-.sidenav .dropdown-menu a {
-  color: #1a5f7a;
-  padding: 12px 18px;
+.sidenav li.open > .dropdown-menu {
   display: block;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border-radius: 8px;
-  margin: 0 8px;
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
 }
-
-.sidenav .dropdown-menu a:hover {
-  background: linear-gradient(135deg, rgba(135, 206, 235, 0.4) 0%, rgba(100, 180, 220, 0.3) 100%);
-  transform: translateX(8px);
-  color: #0a3050;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.sidenav img {
-  max-width: 300px;
-  max-height: 300px;
-  width: auto;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-}
-
-.sidenav-logo {
-  width: 60%;
-  margin-top: 20px;
-}
-
-/* Categories Dropdown */
-.categories-dropdown {
+.sidenav li {
   position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.categories-dropdown .navbar-toggler {
-  width: 100%;
-  max-width: 200px;
+/* Article intro text at top, larger and vivid white */
+.article-intro {
+  font-size: 1.45rem;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.35), 0 0 18px #ffe600;
+  margin-bottom: 24px;
+  margin-top: 18px;
+  line-height: 1.7;
+}
+@media (max-width: 600px) {
+  .article-intro {
+    font-size: 1.18rem;
+  }
 }
 
-.dropdown-toggle-label {
-  display: inline-block;
-  text-transform: uppercase;
+/* Make Categories link same width as others */
+.sidenav .dropdown-toggle.sidebar-link {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 18px 16px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.13);
+  margin-bottom: 0;
   letter-spacing: 0.5px;
-  font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.sidenav .dropdown-toggle.sidebar-link:hover, .sidenav .dropdown-toggle.sidebar-link:focus {
+  background: #ffe600;
+  color: #1a5f7a;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border-color: #ffe600;
 }
 
 /* Card Grid */
