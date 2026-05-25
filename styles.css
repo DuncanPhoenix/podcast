@@ -208,8 +208,8 @@ body {
 
 /* Article intro text at top, larger and vivid white */
 .article-intro {
-  font-size: 1.45rem;
-  color: #fff;
+  font-size: 2.45rem;
+  color: white;
   font-weight: 600;
   text-shadow: 0 2px 12px rgba(0,0,0,0.35), 0 0 18px #ffe600;
   margin-bottom: 24px;
@@ -625,7 +625,7 @@ video:hover {
   }
 
   .navbar-brand .brand-text {
-    font-size: 2.0rem;
+    font-size: 2.7rem;
   }
 
   .card-grid {
@@ -785,7 +785,7 @@ video:hover {
   }
   /* Enlarge font of the title on mobile navbar */
   .navbar-brand .brand-text {
-    font-size: 2.1rem !important;
+    font-size: 2.7rem !important;
     line-height: 1.2;
   }
 }
