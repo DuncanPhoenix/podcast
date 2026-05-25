@@ -283,6 +283,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 24px;
 }
 
 .card-face {
@@ -624,7 +625,7 @@ video:hover {
   }
 
   .navbar-brand .brand-text {
-    font-size: 0.9rem;
+    font-size: 2.0rem;
   }
 
   .card-grid {
