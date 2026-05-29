@@ -208,12 +208,12 @@ body {
 
 /* Article intro text at top, larger and vivid white */
 .article-intro {
-  font-size: 2.45rem;
-  color: white;
+  font-size: 3rem;
+  color: lightblue;
   font-weight: 600;
   text-shadow: 0 2px 12px rgba(0,0,0,0.35), 0 0 18px #ffe600;
   margin-bottom: 24px;
-  margin-top: 18px;
+  margin-top: 20px;
   line-height: 1.7;
 }
 @media (max-width: 600px) {
@@ -270,6 +270,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding:20px;
 }
 
 .card-inner {
@@ -284,7 +285,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 24px;
-  padding-inner: 20px;
+ 
 }
 
 .card-face {
@@ -302,7 +303,7 @@ body {
 /* Card Front */
 .card-front h2 {
   font-family: "Orbitron", sans-serif;
-  font-size: 1.8rem;
+  font-size: 2.0rem;
   color: #FFFFFF;
   margin-bottom: 0.6rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
@@ -354,7 +355,7 @@ body {
 
 /* Background Classes (Consolidated) */
 .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven, .twelve {
-  background: url("images/vago.png");
+  background: url("images/");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -769,7 +770,7 @@ video:hover {
   }
   .main-panel-title {
     color: #ffe600 !important;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 0 15px rgba(0,0,0,0.2);
   }
   /* Move navbar links to the left on mobile */
@@ -786,7 +787,7 @@ video:hover {
   }
   /* Enlarge font of the title on mobile navbar */
   .navbar-brand .brand-text {
-    font-size: 2.7rem !important;
+    font-size: 4rem !important;
     line-height: 1.2;
   }
 }
