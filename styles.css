@@ -284,6 +284,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 24px;
+  padding-inner: 20px;
 }
 
 .card-face {
