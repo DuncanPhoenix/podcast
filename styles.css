@@ -218,7 +218,7 @@ body {
 }
 @media (max-width: 600px) {
   .article-intro {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 
@@ -318,7 +318,7 @@ body {
   z-index: 3;
   position: relative;
   letter-spacing: 0.5px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .card-front p,
@@ -330,7 +330,7 @@ body {
   margin-bottom: 1rem;
   z-index: 3;
   position: relative;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* Card Back */
