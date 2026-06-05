@@ -40,7 +40,7 @@ body {
 
 .navbar-brand .brand-text {
   font-weight: bold;
-  font-size: 2,5rem;
+  font-size: 3rem;
 }
 
 .nav.navbar-nav {
@@ -310,7 +310,7 @@ body {
 /* Card Front */
 .card-front h2 {
   font-family: "Orbitron", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: #FFFFFF;
   margin-bottom: 0.6rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
@@ -323,7 +323,7 @@ body {
 
 .card-front p,
 .card-front h3 {
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   color: #E8E8FF;
   line-height: 1.4;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
@@ -571,7 +571,7 @@ video:hover {
   }
 
   .navbar-brand .brand-text {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   body {
@@ -626,7 +626,7 @@ video:hover {
   }
 
   .main-panel-title {
-    font-size: 2.6rem;
+    font-size: 3.5rem;
   }
 
   .episodes-header h2 {
@@ -714,11 +714,11 @@ video:hover {
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .card-front h2 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: rgb(240, 240, 255);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 150, 255, 0.4);
     z-index: 3;
@@ -728,7 +728,7 @@ video:hover {
 
   .card-front p,
   .card-front h3 {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     color: rgb(255, 255, 255);
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 100, 200, 0.3);
     z-index: 3;
