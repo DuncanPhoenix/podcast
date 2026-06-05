@@ -208,8 +208,8 @@ body {
 
 /* Article intro text at top, larger and vivid white */
 .article-intro {
-  font-size: 1.45rem;
-  color: #fff;
+  font-size: 2rem;
+  color: #6be9ff;
   font-weight: 600;
   text-shadow: 0 2px 12px rgba(0,0,0,0.35), 0 0 18px #ffe600;
   margin-bottom: 24px;
@@ -218,7 +218,7 @@ body {
 }
 @media (max-width: 600px) {
   .article-intro {
-    font-size: 1.18rem;
+    font-size: 2rem;
   }
 }
 
@@ -318,6 +318,7 @@ body {
   z-index: 3;
   position: relative;
   letter-spacing: 0.5px;
+  padding: 10px;
 }
 
 .card-front p,
@@ -329,6 +330,7 @@ body {
   margin-bottom: 1rem;
   z-index: 3;
   position: relative;
+  padding: 10px;
 }
 
 /* Card Back */
@@ -930,3 +932,4 @@ video:hover {
   background: #ffe600;
   color: #222;
 }
+
